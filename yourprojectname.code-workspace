@@ -1,0 +1,99 @@
+{
+  "folders": [
+    {
+      "name": "Rails App",
+      "path": "./webroot"
+    },
+    {
+      "name": "Project Root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "ruby.intellisense": "rubyLocate",
+    "ruby.lsp.enabledFeatures": {
+      "diagnostics": true,
+      "documentHighlights": true,
+      "documentLink": true,
+      "documentSymbols": true,
+      "foldingRanges": true,
+      "formatting": true,
+      "hover": true,
+      "inlayHint": true,
+      "onTypeFormatting": true,
+      "selectionRanges": true,
+      "semanticHighlighting": true,
+      "completion": true,
+      "codeActions": true,
+      "codeLens": true,
+      "definition": true,
+      "workspaceSymbol": true,
+      "signatureHelp": true,
+      "typeHierarchy": true
+    },
+    "ruby.lsp.rubyVersionManager": "auto",
+    "ruby.format": "rubocop",
+    "ruby.lint": {
+      "rubocop": {
+        "useBundler": true
+      }
+    },
+    "files.associations": {
+      "*.html.erb": "erb",
+      "Gemfile": "ruby",
+      "Rakefile": "ruby",
+      "config.ru": "ruby",
+      "*.rake": "ruby"
+    },
+    "emmet.includeLanguages": {
+      "erb": "html"
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[ruby]": {
+      "editor.defaultFormatter": "misogi.ruby-rubocop",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "[erb]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/tmp": true,
+      "**/log": true,
+      "**/coverage": true,
+      "**/.git": true,
+      "**/vendor": true,
+      "**/gems": true,
+      "**/database": true
+    },
+    "files.exclude": {
+      "**/tmp": true,
+      "**/log": true,
+      "**/coverage": true,
+      "**/gems/cache": true,
+      "**/gems/doc": true,
+      "**/database": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "Shopify.ruby-lsp",
+      "bung87.rails",
+      "rebornix.ruby",
+      "castwide.solargraph",
+      "kaiwood.endwise",
+      "misogi.ruby-rubocop",
+      "bradlc.vscode-tailwindcss",
+      "formulahendry.auto-rename-tag",
+      "esbenp.prettier-vscode",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode-remote.remote-containers",
+      "KoichiSasada.vscode-rdbg"
+    ]
+  }
+}

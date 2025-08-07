@@ -1,0 +1,98 @@
+{
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lsp.enabledFeatures": {
+    "diagnostics": true,
+    "documentHighlights": true,
+    "documentLink": true,
+    "documentSymbols": true,
+    "foldingRanges": true,
+    "formatting": true,
+    "hover": true,
+    "inlayHint": true,
+    "onTypeFormatting": true,
+    "selectionRanges": true,
+    "semanticHighlighting": true,
+    "completion": true,
+    "codeActions": true,
+    "codeLens": true,
+    "definition": true,
+    "workspaceSymbol": true,
+    "signatureHelp": true,
+    "typeHierarchy": true
+  },
+  "ruby.lsp.rubyVersionManager": "auto",
+  "ruby.format": "rubocop",
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    }
+  },
+  "files.associations": {
+    "*.html.erb": "erb",
+    "Gemfile": "ruby",
+    "Rakefile": "ruby",
+    "config.ru": "ruby",
+    "*.rake": "ruby"
+  },
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[ruby]": {
+    "editor.defaultFormatter": "misogi.ruby-rubocop",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[erb]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/tmp": true,
+    "**/log": true,
+    "**/coverage": true,
+    "**/.git": true,
+    "**/vendor": true,
+    "**/gems": true,
+    "**/database": true
+  },
+  "files.exclude": {
+    "**/tmp": true,
+    "**/log": true,
+    "**/coverage": true,
+    "**/gems/cache": true,
+    "**/gems/doc": true,
+    "**/database": true
+  },
+  "files.watcherExclude": {
+    "**/tmp/**": true,
+    "**/log/**": true,
+    "**/coverage/**": true,
+    "**/gems/**": true,
+    "**/database/**": true,
+    "**/node_modules/**": true
+  }
+}

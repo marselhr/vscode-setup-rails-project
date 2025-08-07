@@ -1,0 +1,237 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Rails Server",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "server",
+        "-b",
+        "0.0.0.0",
+        "-p",
+        "3036"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*Use Ctrl-C to stop.*$",
+          "endsPattern": "^.*Listening on.*$"
+        }
+      }
+    },
+    {
+      "label": "Rails Console",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "console"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "test"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Bundle Install",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "install"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Rails Generate",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "generate",
+        "${input:generator}"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Database Migrate",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "db:migrate"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Database Setup",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rails",
+        "db:setup"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Rubocop",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rubocop"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Rubocop Auto-correct",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "exec",
+        "app",
+        "bundle",
+        "exec",
+        "rubocop",
+        "-A"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Start Docker Compose",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "up",
+        "-d"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Stop Docker Compose",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "down"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "generator",
+      "description": "Rails generator command (e.g., 'model User name:string')",
+      "default": "controller",
+      "type": "promptString"
+    }
+  ]
+}
