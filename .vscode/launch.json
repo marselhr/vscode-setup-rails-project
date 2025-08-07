@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Rails Server",
+      "type": "rdbg",
+      "request": "launch",
+      "script": "bin/rails server",
+      "args": [
+        "-b",
+        "0.0.0.0",
+        "-p",
+        "3036"
+      ],
+      "env": {
+        "RAILS_ENV": "development"
+      },
+      "useTerminal": true
+    },
+    {
+      "name": "Debug Current Test File",
+      "type": "rdbg",
+      "request": "launch",
+      "script": "bin/rails test",
+      "args": [
+        "${relativeFile}"
+      ],
+      "env": {
+        "RAILS_ENV": "test"
+      },
+      "useTerminal": true
+    },
+    {
+      "name": "Debug Rails Console",
+      "type": "rdbg",
+      "request": "launch",
+      "script": "bin/rails console",
+      "env": {
+        "RAILS_ENV": "development"
+      },
+      "useTerminal": true
+    }
+  ]
+}
