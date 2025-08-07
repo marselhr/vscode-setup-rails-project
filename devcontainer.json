@@ -1,0 +1,94 @@
+{
+  "name": "Rails Development Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/app",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "bung87.rails",
+        "rebornix.ruby",
+        "castwide.solargraph",
+        "kaiwood.endwise",
+        "misogi.ruby-rubocop",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "ruby.intellisense": "rubyLocate",
+        "ruby.lsp.enabledFeatures": {
+          "diagnostics": true,
+          "documentHighlights": true,
+          "documentLink": true,
+          "documentSymbols": true,
+          "foldingRanges": true,
+          "formatting": true,
+          "hover": true,
+          "inlayHint": true,
+          "onTypeFormatting": true,
+          "selectionRanges": true,
+          "semanticHighlighting": true,
+          "completion": true,
+          "codeActions": true,
+          "codeLens": true,
+          "definition": true,
+          "workspaceSymbol": true,
+          "signatureHelp": true,
+          "typeHierarchy": true
+        },
+        "ruby.lsp.rubyVersionManager": "auto",
+        "ruby.format": "rubocop",
+        "ruby.lint": {
+          "rubocop": {
+            "useBundler": true
+          }
+        },
+        "files.associations": {
+          "*.html.erb": "erb",
+          "Gemfile": "ruby",
+          "Rakefile": "ruby",
+          "config.ru": "ruby"
+        },
+        "emmet.includeLanguages": {
+          "erb": "html"
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[ruby]": {
+          "editor.defaultFormatter": "misogi.ruby-rubocop",
+          "editor.formatOnSave": true
+        },
+        "[erb]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+    }
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bundle install",
+  // Use 'postStartCommand' to run commands after the container starts.
+  "postStartCommand": "bundle exec rails server -b 0.0.0.0 -p 3036",
+  // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "user",
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3036,
+    3000
+  ],
+  // Use 'portsAttributes' to set default properties for specific forwarded ports.
+  "portsAttributes": {
+    "3036": {
+      "label": "Rails Server",
+      "onAutoForward": "notify"
+    }
+  }
+}
